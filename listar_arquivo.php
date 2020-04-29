@@ -2,23 +2,7 @@
 	<head>
 		<title>Lista de Arquivos</title>
 		<style>
-			body{
-				font:100% normal Arial, Helvetica, sans-serif;
-				background-color: #B0C4DE;
-			}
-			table {
-  				border: 1px solid #000000;
- 				border-collapse: collapse;
-   			width: 100%;
-			}
-			table th {
-  				border: 1px solid #000000;
-  				background:#A4A4A4;
-			}		
-			table td {
-  				border: 1px solid #000000;
-  				background: #FAFAFA;
-			}	
+
   		</style>
 	</head>
 	<body>

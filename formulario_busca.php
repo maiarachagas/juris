@@ -1,44 +1,26 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Consultar Processo</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 		
 		<style>
-			body{
-				font:100% normal Arial, Helvetica, sans-serif;
-				background-color: #B0C4DE;
+		/*.container{
+			padding-top: 50px;
 			}
- 			div.box label {
-				width:100%;
-				display: block;
-				border-top:1px ;
-				border-bottom:1px ;
-				padding:10px 0 10px 0;
+		.icon{
+			font-size: 20px;
+			background-color:  #F5F5F5;
 			}
- 			div.box label span {
-				font-size: 14px;
-				display: block;
-				color:#000000;
-				float:left;
-				width:50px;
-				text-align:left;
-				border-top:1px ;
-				border-bottom: 1px;
-				padding:5px 20px 0 0;
-			}	
- 			div.box .input_text {
-				padding:10px 10px;
-				width:250px;
-				background: #DCDCDC;
-				border-bottom: 1px ;
-				border-top: 1px ;
-				border-left:1px ;
-				border-right:1px ;
-			}
+			.input-group-btn{background-color:  #F5F5F5;}
+			
 			table {
+				padding-left: 50px;
   				border: 1px solid #000000;
  				border-collapse: collapse;
-   			width: 1000px;
+				width: 1000px;
 			}
 			table th {
   				border: 1px solid #000000;
@@ -47,21 +29,26 @@
 			table td {
   				border: 1px solid #000000;
   				background: #FAFAFA;
-			}	
-  		</style>
-  		
+			}				
+			*/
+			
+		</style>
 	</head>
-	<body>
-		<h4>Pesquisar:</h4>
-		<form method="post" action="formulario_busca.php">
 
-		<div class="box">
-		<label>
-			<span>Nome:</span>
-			<input type="text" class="input_text" name="buscar" id="name">
-			<input type="submit" value="Buscar" class="button">
+	<body>
+		<div class="container">
+		<div class="row1">
+			<h2>Pesquisar</h2>
+			<form method="post" action="formulario_busca.php">
+				<div class="input-group">
+				<input type="text" class="form-control" placeholder="Search" name="buscar">
+				<div class="input-group-btn">
+				<button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search icon"></i></button>
+				</div>
+				</div>
+			</form>
 		</div>
-		</form>
+	
 		
 		<?php
 		include_once ("conectar_cod.php");	
@@ -72,18 +59,19 @@
 			$select = "SELECT * FROM Juridico WHERE nomeRequerente LIKE '%".$buscar."%'";
 			$res = mysqli_query($conn, $select);
 			
-			echo "<table>";
-			echo "<thead>";
+			echo "<div class='table-responsive'>";
+			echo "<table class='table'>";
+			echo "<thead class='thead-dark'>";
 			echo "<tr>";
-			echo "<th>Registro</th>";
-			echo "<th>Alterar</th>";
-			echo "<th>Excluir</th>";
-			echo "<th>Requerente</th>";
-			echo "<th>Matrícula</th>";
-			echo "<th>Endereço Requerente</th>";
-			echo "<th>Número do Processo</th>";
-			echo "<th>Assunto</th>";
-			echo "<th>Status da ação:</th>";
+			echo "<th scope='col'>#</th>";
+			echo "<th scope='col'>Alterar</th>";
+			echo "<th scope='col'>Excluir</th>";
+			echo "<th scope='col'>Requerente</th>";
+			echo "<th scope='col'>Matrícula</th>";
+			echo "<th scope='col'>Endereço Requerente</th>";
+			echo "<th scope='col'>Número do Processo</th>";
+			echo "<th scope='col'>Assunto</th>";
+			echo "<th scope='col'>Status da ação:</th>";
 			echo "</tr>";
 			echo "</thead>";
 			
@@ -92,7 +80,7 @@
 				echo "<tr>";
 				echo "<td align='center'><a href='sobre.php?id={$linha['id']}'><button class='btn sobre'> Consultar </button></a></td>";
 				echo "<td align='center'><a href='formulario_alterar.php?id={$linha['id']}'><button class='btn alterar' onclick=\"return confirm('Deseja ALTERAR este registro?'); return false;\">Alt</button></a></td>";
-				echo "<td align='center'><a href='delete_cod.php?id={$linha['id']}'><button class='btn excluir' onclick=\"return confirm('Tem certeza que deseja EXCLUIR este registro?'); return false;\">Del</button></a></td>";
+				echo "<td align='center'><a href='delete-form_cod.php?id={$linha['id']}'><button class='btn excluir' onclick=\"return confirm('Tem certeza que deseja EXCLUIR este registro?'); return false;\">Del</button></a></td>";
 				echo "<td>".$linha["nomeRequerente"] ."</td>";
 				echo "<td>".$linha["idCadastroRequerente"] ."</td>";
 				echo "<td>".$linha["enderecoRequerente"] ."</td>";
@@ -103,8 +91,9 @@
 				echo "</tbody>"; 
 			}
 			echo "</table>";
-		}
+			}
 		?>
 			<br>
+			</div>
 	</body>
 </html>

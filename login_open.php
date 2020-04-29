@@ -1,12 +1,10 @@
 <html>
 	<head>
 		<title></title>
+		<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 		<style>
-body{
-			font:100% normal Arial, Helvetica, sans-serif;
-			background-color:#B0C4DE;			
-			}		
-		
 		</style>
 	</head>
 	<body>
@@ -32,7 +30,9 @@ body{
 		}else{
   			unset ($_SESSION['login']);
   			unset ($_SESSION['senha']);
-  			echo "Login ou senha errado. Tente novamente.<br/>";
- 		}
-
+  			echo "<div class='alert alert-danger' role='alert'>Usuário ou senha inválidos. Tente novamente!</div>.<br/>";
+ 		}	
+		
+		
+		
 ?>	

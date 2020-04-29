@@ -35,16 +35,8 @@
 	<head>
 		<title>Upload de Arquivo</title>
 		<style>
-			body {
-				font:100% normal Arial, Helvetica, sans-serif;
-				margin-left:10%;
-				margin-right:50%;
-				margin-top:5%;
-				margin-bottom:5%;
-				width:350px;
-				height:100px;
-				background-color: #B0C4DE;
-			}
+
+
 		</style>
 	</head>
 	<body>

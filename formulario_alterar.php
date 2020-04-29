@@ -31,62 +31,7 @@
 		<title>Formulário</title>
 		
 		<style>		
-			body{
-			font:100% normal Arial, Helvetica, sans-serif;
-			background-color:#B0C4DE;			
-			}
-			
-			div.box h4 {
-			color:black;
-			padding:auto;
-			border-bottom:1px ;
-			border-top:1px ;
-			}
- 
-			div.box label {
-			width:100%;
-			display: block;
-			/*border-top:1px ;
-			border-bottom:1px ;*/
-			padding:10px 0 10px 0;
-			}
- 
-			div.box label span {
-			display: block;
-			color:#000000;
-			font-size:12px;
-			float:left;
-			width:100px;
-			text-align:left;
-			border-top:1px ;
-			border-bottom: 1px;
-			padding:5px 20px 0 0;
-			}	
- 
-			div.box .input_text {
-			padding:10px 10px;
-			width:200px;
-			background: #DCDCDC;
-			border-bottom: 1px ;
-			border-top: 1px ;
-			border-left:1px ;
-			border-right:1px ;
-			}
-  
-			div.box .button{
-			margin:0 0 10px 0;
-			padding:4px 7px;
-			background:;
-			border:0px;
-			top:10px;
-			left:382px;
-			width:100px;
-			border-bottom: 1px ;
-			border-top: 1px ;
-			border-left:1px  ;
-			border-right:1px ;
-		
-			}	
+
 		</style>
 	</head>
 	<body>

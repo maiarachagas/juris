@@ -31,26 +31,7 @@
 		<title>Formulário</title>
 		
 		<style>		
-			body{
-				font:100% normal Arial, Helvetica, sans-serif;
-				background-color:#c2dee7;			
-			}
-			div.box table{
-				background-color: #ffffcc;
-				padding:10 20 10 10;
-				margin:120 110 100 300;
 
-			}
-			div.box table caption{
-				background-color: #ffffcc;
-				text-align:center;
-			}				
-			div.box table th{
-				text-align: right;
-			}			
-			div.box table td {
-				text-align: left;
-			}			
 			
 		</style>
 	</head>
