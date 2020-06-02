@@ -174,6 +174,6 @@ session_start();
                 </div>
             </div>
         </div>
-		<a href="/projetos/juris/opcoes.php"><button class="btn opcoes">Voltar</button></a>
+		<a href="/projetos/juris/tela_usuario.php"><button class="btn opcoes">Voltar</button></a>
     </body>
 </html>

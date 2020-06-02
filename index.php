@@ -3,44 +3,117 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Index</title>
+		<title>Home</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		
 		<style>
 		/*Menu*/
-		.navbar {
-			margin-bottom: 0;
+		*{
+			margin:0;
+			padding:0;
+			font-family: "Arial";
+		}
+		.menu{
 			background-color: #4682B4;
-			z-index: 9999;
-			border: 0;
-			font-size: 12px !important;
-			line-height: 1.42857143 !important;
-			letter-spacing: 4px;
-			border-radius: 0;
+			font-size: 14px;
+			letter-spacing: 2px;
+			width: 100%;
+			height: 50px;
 		}
-		.navbar li a, .navbar .navbar-brand {
-			color: white !important;
+		.menu ul{
+			list-style: none;
+			position: relative;
 		}
-		.navbar-nav li a:hover, .navbar-nav li.active a {
-			color: #6495ED !important;
-			background-color: white !important;
+		.menu ul li{
+			width: 200px;
+			float: left;
 		}
-		.navbar-default .navbar-toggle {
-			border-color: transparent;
-			color: white !important;
+		.menu a{
+			padding: 15px;
+			display: block;
+			text-decoration: none;
+			text-align: center;
+			background-color: #4682B4;
+			color: #FFFFFF;
 		}
-		.open .dropdown-toggle {
-			color: white;
-			background-color: #6495ED !important;
+		.menu ul ul{
+			position: absolute;
+			visibility: hidden;
+		}
+		.menu ul li:hover ul{
+			visibility: visible;
+		}
+		.menu a:hover{
+			background-color: #6495ED;
+			color: #000000;
+		}
+		.menu ul ul li{
+			float: none;
+			border-bottom: 1px solid #FFFFFF;
+		}
+		.dropdown-toggle {
+			background-color: #6495ED;
+			color: #FFFFFF;
 		}
 		.dropdown-menu li a {
-			color: #000000 !important;
+			color: #000000;
 		}
-		.dropdown-menu li a:hover {
-			background-color: #000000 !important;
+		
+		/*Menu Responsivo*/
+		label[for="bt_menu"]{
+			padding: 5px;
+			background-color: #4682B4;
+			color: #FFFFFF;
+			font-family:"Arial";
+			text-align: left;
+			font-size: 30px;
+			cursor: pointer;
+			width: 100%;
+			height: 50px;
 		}
-		/*glyphicon*/
+		#bt_menu{
+			display: none;
+		}
+		label[for="bt_menu"]{
+			display: none;	
+		}
+		@media (max-width: 800px){
+		label[for="bt_menu"]{
+			display: block;	
+		}
+		.menu{
+			margin-left: -100%;
+			transition: all .4s;
+		}
+		.menu ul li{
+			width: 100%;
+			float: none;
+		}
+		.menu ul ul{
+			position: static;
+			overflow: hidden;
+			max-height: 0;
+			transition: all .4s;
+		}
+		.menu ul li:hover ul{
+			height: auto;
+			max-height: 200px;
+		}
+		.dropdown-toggle {
+			background-color: #6495ED;
+			color: #FFFFFF;
+		}
+		.dropdown-menu li a {
+			color: #000000;
+		}
+		#bt_menu:checked ~ .menu{
+			margin-left: 0;
+		}
+		}
+	
+		/*Glyphicon(icones)*/
 		.logo-small {
 			color: #6495ED;
 			font-size: 30px;
@@ -49,23 +122,18 @@
 	</head>
 
 	<body>
-		<nav class="navbar navbar-default navbar-fixed-top">
-		  <div class="container">
-		  <div class="collapse navbar-collapse" id="myNavbar">
-			<ul class="nav navbar-nav navbar-right">
-			  <li><a href="#">HOME</a></li>
-			  <li class="dropdown">
-			  <a class="dropdown-toggle" data-toggle="dropdown" href="#">ACESSAR LOGIN
-			  <span class="caret"></span>
-			  </a>
-			<ul class="dropdown-menu">
-              <li><a href="login_adv.php">Advogado</a></li>
-              <li><a href="login_cliente.php">Cliente</a></li>
-			</ul>
-			  </li>
-			</ul>
-		  </div>
-		  </div>
+		<input type="checkbox" id="bt_menu">
+		<label for="bt_menu"> &#9776;</label>
+		<nav class="menu">		 		  
+		<ul>
+			<li><a href="index.php">HOME</a></li>
+			<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">ACESSAR LOGIN<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="login_adv.php">Advogado(a)</a></li>
+					<li><a href="login_client.php">Cliente</a></li>
+				</ul>
+			</li>
+		</ul>
 		</nav>
 		
 		<br><br>		

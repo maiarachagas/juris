@@ -3,7 +3,7 @@
 	$servername = "localhost";
 	$username 	= "maiara";
 	$password 	= "inocoop";
-	$dbname 		= "maiara";
+	$dbname 	= "maiara";
 	
 	$conn = new mysqli($servername, $username, $password, $dbname);
 		if ($conn->connect_error) {

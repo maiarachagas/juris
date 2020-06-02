@@ -78,14 +78,11 @@ body{
 	font-size: 13px;
 	text-decoration: none;
 	}
-
-
-
 		</style>
 	</head>
 	
 	<body>
-		<form method="post" action="login_open.php" id="formlogin" name="formlogin" >
+		<form method="post" action="cod_select-login.php" id="formlogin" name="formlogin" >
 		<div class="container">
 		<div class="login-form">
 			<div class="main-div">

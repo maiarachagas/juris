@@ -30,8 +30,7 @@
   				border: 1px solid #000000;
   				background: #FAFAFA;
 			}				
-			*/
-			
+		
 		</style>
 	</head>
 
@@ -39,7 +38,7 @@
 		<div class="container">
 		<div class="row1">
 			<h2>Pesquisar</h2>
-			<form method="post" action="formulario_busca.php">
+			<form method="post" action="formulario_select.php">
 				<div class="input-group">
 				<input type="text" class="form-control" placeholder="Search" name="buscar">
 				<div class="input-group-btn">
@@ -51,7 +50,7 @@
 	
 		
 		<?php
-		include_once ("conectar_cod.php");	
+		include_once ("cod_conexao-bd.php");
 
 		if (isset($_POST["buscar"])){
 			
@@ -66,8 +65,7 @@
 			echo "<th scope='col'>#</th>";
 			echo "<th scope='col'>Alterar</th>";
 			echo "<th scope='col'>Excluir</th>";
-			echo "<th scope='col'>Requerente</th>";
-			echo "<th scope='col'>Matrícula</th>";
+			echo "<th scope='col'>Autor</th>";
 			echo "<th scope='col'>Endereço Requerente</th>";
 			echo "<th scope='col'>Número do Processo</th>";
 			echo "<th scope='col'>Assunto</th>";
@@ -78,11 +76,10 @@
 				while($linha = mysqli_fetch_array($res)){
 				echo "<tbody>"; 
 				echo "<tr>";
-				echo "<td align='center'><a href='sobre.php?id={$linha['id']}'><button class='btn sobre'> Consultar </button></a></td>";
-				echo "<td align='center'><a href='formulario_alterar.php?id={$linha['id']}'><button class='btn alterar' onclick=\"return confirm('Deseja ALTERAR este registro?'); return false;\">Alt</button></a></td>";
-				echo "<td align='center'><a href='delete-form_cod.php?id={$linha['id']}'><button class='btn excluir' onclick=\"return confirm('Tem certeza que deseja EXCLUIR este registro?'); return false;\">Del</button></a></td>";
+				echo "<td align='center'><a href='perfil_processo.php?id={$linha['id']}'><button class='btn perfil'> Consultar </button></a></td>";
+				echo "<td align='center'><a href='formulario_alter.php?id={$linha['id']}'><button class='btn alterar' onclick=\"return confirm('Deseja ALTERAR este registro?'); return false;\">Alt</button></a></td>";
+				echo "<td align='center'><a href='cod_delet-form.php?id={$linha['id']}'><button class='btn excluir' onclick=\"return confirm('Tem certeza que deseja EXCLUIR este registro?'); return false;\">Del</button></a></td>";
 				echo "<td>".$linha["nomeRequerente"] ."</td>";
-				echo "<td>".$linha["idCadastroRequerente"] ."</td>";
 				echo "<td>".$linha["enderecoRequerente"] ."</td>";
 				echo "<td>".$linha["numProcesso"] ."</td>";
 				echo "<td>".$linha["assuntoProcesso"] ."</td>";

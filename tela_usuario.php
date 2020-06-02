@@ -7,7 +7,7 @@
 		{
   		unset($_SESSION['login']);
   		unset($_SESSION['senha']);
-  		header('location:login_restrito.php');
+  		header('location:login_adv.php');
   		}
  
 		$logado = $_SESSION['login'];
@@ -166,13 +166,13 @@
 			<a href=""><?php echo "Olá $logado"; ?></a>
 			</header>
 			<ul class="nav">
-				<li><a href="#">HOME</a></li>
+				<li><a href="tela_usuario.php">HOME</a></li>
 				<li class="dropdown">
 					<a class="dropdown-toggle" data-toggle="dropdown" href="#">LOGIN
 					<span class="caret"></span>
 					</a>
 					<ul class="dropdown-menu">
-					<li><a href="login_cadastrarCliente.php">Criar login cliente</a></li>
+					<li><a href="loginClient_insert.php">Criar login cliente</a></li>
 					<li><a href="#">Visualizar logins</a></li>
 					</ul>
 				</li>
@@ -180,10 +180,10 @@
 					<a class="dropdown-toggle" data-toggle="dropdown" href="#">SERVIÇOS
 					<span class="caret"></span></a>
 					<ul class="dropdown-menu">
-					<li><a href="formulario_cadastro.php">Cadastrar</a></li>
-					<li><a href="formulario_busca.php">Consultar</a></li>
+					<li><a href="formulario_insert.php">Cadastrar</a></li>
+					<li><a href="formulario_select.php">Consultar</a></li>
 					<li><a href="Calendario/agenda.php">Agenda</a></li>
-					<li><a href="add_arquivos.php">Documentos</a></li>
+					<li><a href="file_upload.php">Documentos</a></li>
 					</ul>
 				</li>
 				<li><a href="#">LOGOUT</a></li>
@@ -207,7 +207,7 @@
 					<span class="glyphicon glyphicon-ok icon"></span>
 					<h4>Cadastrar</h4>
 					<p>Adicione informações referente ao processo, como nome das partes, nº do processo, advogados e seus clientes.</p>
-					<a href="formulario_cadastro.php"><button type="button" class="btn btn-primary site-btn">Acessar</button></a>
+					<a href="formulario_insert.php"><button type="button" class="btn btn-primary site-btn">Acessar</button></a>
 					</div>
 				</div>
 				<!-- End Col -->
@@ -216,7 +216,7 @@
 					<span class="glyphicon glyphicon-list-alt icon"></span>
 					<h4>Consultar</h4>
 					<p>Consulte seus processos e seus andamentos. </p>
-					<a href="formulario_busca.php"><button type="button" class="btn btn-primary site-btn">Acessar</button></a>
+					<a href="formulario_select.php"><button type="button" class="btn btn-primary site-btn">Acessar</button></a>
 					</div>
 				</div>
 				</div>
@@ -237,7 +237,7 @@
 					<span class="glyphicon glyphicon-folder-open icon"></span>
 					<h4>Documentos</h4>
 					<p>Adicione arquivos como procurações, petições, iniciais, andamento de processos e documentos de seu cliente. </p>
-				    <a href="add_arquivos.php"><button type="button" class="btn btn-primary site-btn">Acessar</button></a>
+				    <a href="file_upload.php"><button type="button" class="btn btn-primary site-btn">Acessar</button></a>
 					</div>
 				</div>
 				<!-- End Col -->

@@ -7,7 +7,7 @@
 		{
   		unset($_SESSION['login']);
   		unset($_SESSION['senha']);
-  		header('location:login_restrito.php');
+  		header('location:login_adv.php');
   		}
  
 		$logado = $_SESSION['login'];
@@ -125,7 +125,11 @@
 			font-size:10px;
 			margin-top:0;
 			}
-		
+		h2 {
+			color:#4682B4;
+			font-weight: 600;
+			margin-left: 25px;
+			}
 		.content h3{
 			font-weight: 600;
 			margin-top: 0;
@@ -173,7 +177,7 @@
 					<span class="caret"></span>
 					</a>
 					<ul class="dropdown-menu">
-					<li><a href="login_cadastrarCliente.php">Criar login cliente</a></li>
+					<li><a href="loginClient_insert.php">Criar login cliente</a></li>
 					<li><a href="#">Visualizar logins</a></li>
 					</ul>
 				</li>
@@ -181,10 +185,10 @@
 					<a class="dropdown-toggle" data-toggle="dropdown" href="#">SERVIÇOS
 					<span class="caret"></span></a>
 					<ul class="dropdown-menu">
-					<li><a href="formulario_cadastro.php">Cadastrar</a></li>
-					<li><a href="formulario_busca.php">Consultar</a></li>
+					<li><a href="formulario_insert.php">Cadastrar</a></li>
+					<li><a href="formulario_select.php">Consultar</a></li>
 					<li><a href="Calendario/agenda.php">Agenda</a></li>
-					<li><a href="add_arquivos.php">Documentos</a></li>
+					<li><a href="file_upload.php">Documentos</a></li>
 					</ul>
 				</li>
 				<li><a href="#">LOGOUT</a></li>
@@ -193,12 +197,12 @@
 			
  <!-- Conteudo -->
 	<div id="content">
-	<h3>Formulário</h3>
+	<h2>Formulário</h2>
        <table class="table table-striped">
           <tbody>
              <tr>
                 <td colspan="1">
-                   <form class="well form-horizontal" name"cadastro" action="cadastrar-form_cod.php" method="post">
+                   <form class="well form-horizontal" name"cadastro" action="cod_insert-form.php" method="post">
                       <fieldset>
                          <div class="form-group">
 							<div class="col-md-12 site-heading ">
@@ -215,7 +219,7 @@
                             <label class="col-md-4 control-label">CPF</label>
                             <div class="col-md-8 inputGroupContainer">
                                <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-							   <input id="addressLine1" name="idCadastroRequerente" placeholder="000.000.000-00" class="form-control" required="true" value="" type="text"></div>
+							   <input name="idRequerente" class="form-control" placeholder="000.000.000-00" required="true" type="text"></div>
                             </div>
                          </div>
                          <div class="form-group">
@@ -225,46 +229,46 @@
 							   <input id="addressLine2" name="enderecoRequerente" placeholder="Endereço" class="form-control" required="true" value="" type="text"></div>
                             </div>
                          </div>
-                         <!--<div class="form-group">
+						 <!--<div class="form-group">
                             <label class="col-md-4 control-label">Cidade</label>
                             <div class="col-md-8 inputGroupContainer">
                                <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-							   <input id="city" name="city" placeholder="Cidade" class="form-control" required="true" value="" type="text"></div>
+							   <input name="cidadeRequerente" placeholder="Cidade" class="form-control" required="true" value=" " type="text"></div>
                             </div>
                          </div>
                          <div class="form-group">
                             <label class="col-md-4 control-label">Estado</label>
                             <div class="col-md-8 inputGroupContainer">
                                <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-							   <input id="state" name="state" placeholder="Estado" class="form-control" required="true" value="" type="text"></div>
+							   <input name="estadoRequerente" placeholder="Estado" class="form-control" required="true" value=" " type="text"></div>
                             </div>
                          </div>
                          <div class="form-group">
                             <label class="col-md-4 control-label">CEP</label>
                             <div class="col-md-8 inputGroupContainer">
                                <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-							   <input id="postcode" name="postcode" placeholder="00000-000" class="form-control" required="true" value="" type="text"></div>
+							   <input name="cepRequerente" placeholder="00000-000" class="form-control" required="true" value=" " type="text"></div>
                             </div>
                          </div>
                          <div class="form-group">
                             <label class="col-md-4 control-label">Email</label>
                             <div class="col-md-8 inputGroupContainer">
                                <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-							   <input id="email" name="email" placeholder="Email" class="form-control" required="true" value="" type="text"></div>
+							   <input name="emailRequerente" placeholder="Email" class="form-control" required="true" value=" " type="text"></div>
                             </div>
                          </div>
                          <div class="form-group">
                             <label class="col-md-4 control-label">Telefone Fixo</label>
                             <div class="col-md-8 inputGroupContainer">
                                <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-							   <input id="phoneNumber" name="phoneNumber" placeholder="(xx)xxxx-xxxx" class="form-control" required="true" value="" type="text"></div>
+							   <input name="foneRequerente" placeholder="(xx)xxxx-xxxx" class="form-control" required="true" value=" " type="text"></div>
                             </div>
                          </div>
 						 <div class="form-group">
                             <label class="col-md-4 control-label">Celular</label>
                             <div class="col-md-8 inputGroupContainer">
                                <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
-							   <input id="phoneNumber" name="phoneNumber" placeholder="(xx)9xxxx-xxxx" class="form-control" required="true" value="" type="text"></div>
+							   <input name="celRequerente" placeholder="(xx)9xxxx-xxxx" class="form-control" required="true" value=" " type="text"></div>
                             </div>
                          </div>-->
 						 <div class="form-group">
@@ -291,63 +295,63 @@
                             <label class="col-md-4 control-label">Nome</label>
                             <div class="col-md-8 inputGroupContainer">
                                <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-							   <input id="fullName" name="nomeRequerido" placeholder="Nome Completo" class="form-control" required="true" value="" type="text"></div>
+							   <input name="nomeRequerido" placeholder="Nome Completo" class="form-control" required="true" value="" type="text"></div>
                             </div>
                          </div>
                          <div class="form-group">
                             <label class="col-md-4 control-label">CPF/CNPJ</label>
                             <div class="col-md-8 inputGroupContainer">
                                <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-							   <input id="addressLine1" name="idCadastroRequerido" placeholder="CPF ou CNPJ" class="form-control" required="true" value="" type="text"></div>
+							   <input name="idRequerido" placeholder="CPF ou CNPJ" class="form-control" required="true" value="" type="text"></div>
                             </div>
                          </div>
                          <div class="form-group">
                             <label class="col-md-4 control-label">Endereço</label>
                             <div class="col-md-8 inputGroupContainer">
                                <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-							   <input id="addressLine2" name="enderecoRequerido" placeholder="Endereço" class="form-control" required="true" value="" type="text"></div>
+							   <input name="enderecoRequerido" placeholder="Endereço" class="form-control" required="true" value="" type="text"></div>
                             </div>
                          </div>
                          <!--<div class="form-group">
                             <label class="col-md-4 control-label">Cidade</label>
                             <div class="col-md-8 inputGroupContainer">
                                <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-							   <input id="city" name="city" placeholder="Cidade" class="form-control" required="true" value="" type="text"></div>
+							   <input name="cidadeRequerido" placeholder="Cidade" class="form-control" required="true" value=" " type="text"></div>
                             </div>
                          </div>
                          <div class="form-group">
                             <label class="col-md-4 control-label">Estado</label>
                             <div class="col-md-8 inputGroupContainer">
                                <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-							   <input id="state" name="state" placeholder="Estado" class="form-control" required="true" value="" type="text"></div>
+							   <input name="estadoRequerido" placeholder="Estado" class="form-control" required="true" value=" " type="text"></div>
                             </div>
                          </div>
                          <div class="form-group">
                             <label class="col-md-4 control-label">CEP</label>
                             <div class="col-md-8 inputGroupContainer">
                                <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-							   <input id="postcode" name="postcode" placeholder="00000-000" class="form-control" required="true" value="" type="text"></div>
+							   <input name="cepRequerido" placeholder="00000-000" class="form-control" required="true" value=" " type="text"></div>
                             </div>
                          </div>
                          <div class="form-group">
                             <label class="col-md-4 control-label">Email</label>
                             <div class="col-md-8 inputGroupContainer">
                                <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-							   <input id="email" name="email" placeholder="Email" class="form-control" required="true" value="" type="text"></div>
+							   <input name="emailRequerido" placeholder="Email" class="form-control" required="true" value=" " type="text"></div>
                             </div>
                          </div>
                          <div class="form-group">
                             <label class="col-md-4 control-label">Telefone Fixo</label>
                             <div class="col-md-8 inputGroupContainer">
                                <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-							   <input id="phoneNumber" name="phoneNumber" placeholder="(xx)xxxx-xxxx" class="form-control" required="true" value="" type="text"></div>
+							   <input name="foneRequerido" placeholder="(xx)xxxx-xxxx" class="form-control" required="true" value=" " type="text"></div>
                             </div>
                          </div>
 						 <div class="form-group">
                             <label class="col-md-4 control-label">Celular</label>
                             <div class="col-md-8 inputGroupContainer">
                                <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
-							   <input id="phoneNumber" name="phoneNumber" placeholder="(xx)9xxxx-xxxx" class="form-control" required="true" value="" type="text"></div>
+							   <input name="celRequerido" placeholder="(xx)9xxxx-xxxx" class="form-control" required="true" value=" " type="text"></div>
                             </div>
                          </div>-->
 						 <div class="form-group">

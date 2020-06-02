@@ -82,7 +82,7 @@ body{
 	</head>
 	
 	<body>
-		<form method="post" action="login_insert.php" id="formlogin" name="formlogin" >
+		<form method="post" action="cod_insert-login.php.php" id="formlogin" name="formlogin" >
 		<div class="container">
 		<div class="login-form">
 			<div class="main-div">
